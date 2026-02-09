@@ -1,0 +1,205 @@
+/* ==========================================
+   MAGNETIC CODE FIELD - Canvas Layer
+   ========================================== */
+
+.magnetic-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================
+   GSAP ORBITAL ANIMATIONS - Tech Icons
+   ========================================== */
+
+.orbital-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.orbital-item {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    left: 50%;
+    margin: -24px 0 0 -24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow:
+        0 4px 12px rgba(59, 130, 246, 0.2),
+        0 0 20px rgba(59, 130, 246, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.orbital-item svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.orbital-item:hover {
+    transform: scale(1.15);
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow:
+        0 8px 24px rgba(59, 130, 246, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.orbital-item:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Individual Tech Colors */
+.orbital-item[data-tech="react"] {
+    background: rgba(97, 218, 251, 0.1);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+.orbital-item[data-tech="react"]:hover {
+    background: rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.6);
+    box-shadow: 0 8px 24px rgba(97, 218, 251, 0.4);
+}
+
+.orbital-item[data-tech="react"] svg {
+    color: #61DAFB;
+}
+
+.orbital-item[data-tech="js"] {
+    background: rgba(247, 223, 30, 0.1);
+    border-color: rgba(247, 223, 30, 0.3);
+}
+
+.orbital-item[data-tech="js"]:hover {
+    background: rgba(247, 223, 30, 0.2);
+    border-color: rgba(247, 223, 30, 0.6);
+    box-shadow: 0 8px 24px rgba(247, 223, 30, 0.4);
+}
+
+.orbital-item[data-tech="js"] svg {
+    color: #F7DF1E;
+}
+
+.orbital-item[data-tech="html"] {
+    background: rgba(227, 76, 38, 0.1);
+    border-color: rgba(227, 76, 38, 0.3);
+}
+
+.orbital-item[data-tech="html"]:hover {
+    background: rgba(227, 76, 38, 0.2);
+    border-color: rgba(227, 76, 38, 0.6);
+    box-shadow: 0 8px 24px rgba(227, 76, 38, 0.4);
+}
+
+.orbital-item[data-tech="html"] svg {
+    color: #E34C26;
+}
+
+.orbital-item[data-tech="css"] {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.orbital-item[data-tech="css"]:hover {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.orbital-item[data-tech="css"] svg {
+    color: #2563EB;
+}
+
+.orbital-item[data-tech="git"] {
+    background: rgba(240, 80, 51, 0.1);
+    border-color: rgba(240, 80, 51, 0.3);
+}
+
+.orbital-item[data-tech="git"]:hover {
+    background: rgba(240, 80, 51, 0.2);
+    border-color: rgba(240, 80, 51, 0.6);
+    box-shadow: 0 8px 24px rgba(240, 80, 51, 0.4);
+}
+
+.orbital-item[data-tech="git"] svg {
+    color: #F05033;
+}
+
+.orbital-item[data-tech="code"] {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.orbital-item[data-tech="code"]:hover {
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4);
+}
+
+.orbital-item[data-tech="code"] svg {
+    color: #A855F7;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .orbital-item {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow:
+        0 4px 12px rgba(59, 130, 246, 0.3),
+        0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+body.dark-mode .orbital-item:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .orbital-item {
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+    }
+
+    .orbital-item svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbital-item {
+        width: 36px;
+        height: 36px;
+        margin: -18px 0 0 -18px;
+    }
+
+    .orbital-item svg {
+        width: 18px;
+        height: 18px;
+    }
+}

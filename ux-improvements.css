@@ -1,0 +1,446 @@
+/* ===================================
+   UX Improvements CSS
+   Projects, Sticky CTA, Progress Dots
+   =================================== */
+
+/* Section Subtitle */
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xl);
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+/* ===================================
+   Projects Section
+   =================================== */
+.projects {
+    background-color: var(--bg-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+}
+
+.project-icon {
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.project-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-content {
+    padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.project-link {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    font-size: 1.2rem;
+}
+
+.project-link:hover {
+    background: var(--accent-primary);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.tech-badge-small {
+    padding: 4px 10px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.project-metrics {
+    display: flex;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.metric-value {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--accent-primary);
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projects-cta {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+}
+
+/* Button Variants */
+.btn-lg {
+    padding: calc(var(--spacing-sm) + 4px) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all var(--transition-base);
+}
+
+.btn-link:hover {
+    color: var(--accent-primary);
+    text-decoration-color: var(--accent-primary);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+/* ===================================
+   Progress Dots Navigation
+   =================================== */
+.progress-dots {
+    position: fixed;
+    right: var(--spacing-lg);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.progress-dot::before {
+    content: attr(data-label);
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-primary);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.progress-dot:hover::before {
+    opacity: 1;
+}
+
+.progress-dot.active {
+    background: var(--accent-primary);
+    transform: scale(1.5);
+}
+
+.progress-dot:hover {
+    background: var(--accent-hover);
+}
+
+/* ===================================
+   Sticky CTA Bar
+   =================================== */
+.sticky-cta {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    z-index: 999;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    transition: bottom var(--transition-base);
+}
+
+body.dark-mode .sticky-cta {
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.sticky-cta.show {
+    bottom: 0;
+}
+
+.sticky-cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.sticky-cta-text {
+    flex: 1;
+}
+
+.sticky-cta-text h3 {
+    margin: 0 0 4px 0;
+    font-size: var(--font-size-lg);
+}
+
+.sticky-cta-text p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.sticky-cta-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* ===================================
+   Toast Notifications
+   =================================== */
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: var(--spacing-lg);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.toast {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 280px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.toast.success {
+    border-color: #10b981;
+}
+
+.toast.error {
+    border-color: #ef4444;
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: var(--font-size-sm);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   Back to Top Button
+   =================================== */
+.back-to-top {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 998;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-4px);
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-dots {
+        display: none;
+    }
+
+    .sticky-cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sticky-cta-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .sticky-cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .toast-container {
+        right: var(--spacing-sm);
+        left: var(--spacing-sm);
+    }
+
+    .toast {
+        min-width: auto;
+    }
+}

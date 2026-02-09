@@ -1,0 +1,343 @@
+/* ==========================================
+   Front-end Development Elements CSS
+   ========================================== */
+
+/* Code Background Decoration */
+.code-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.03;
+    pointer-events: none;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    z-index: 0;
+}
+
+body.dark-mode .code-decoration {
+    opacity: 0.08;
+}
+
+.code-decoration code {
+    position: absolute;
+    white-space: nowrap;
+    animation: floatCode 20s linear infinite;
+}
+
+.code-decoration code:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.code-decoration code:nth-child(2) {
+    top: 25%;
+    left: 15%;
+    animation-delay: -2s;
+}
+
+.code-decoration code:nth-child(3) {
+    top: 40%;
+    right: 10%;
+    animation-delay: -4s;
+}
+
+.code-decoration code:nth-child(4) {
+    top: 55%;
+    left: 8%;
+    animation-delay: -6s;
+}
+
+.code-decoration code:nth-child(5) {
+    top: 70%;
+    right: 20%;
+    animation-delay: -8s;
+}
+
+.code-decoration code:nth-child(6) {
+    top: 85%;
+    left: 25%;
+    animation-delay: -10s;
+}
+
+.code-decoration code:nth-child(7) {
+    top: 15%;
+    right: 5%;
+    animation-delay: -12s;
+}
+
+.code-decoration code:nth-child(8) {
+    top: 60%;
+    right: 15%;
+    animation-delay: -14s;
+}
+
+.code-decoration .react-code {
+    color: var(--accent-primary);
+}
+
+@keyframes floatCode {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.6;
+    }
+}
+
+/* Tech Orbits around Avatar */
+.tech-orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px dashed var(--border-color);
+    opacity: 0.3;
+    animation: rotate 15s linear infinite;
+}
+
+.tech-orbit-1 {
+    width: 220px;
+    height: 220px;
+    top: -20px;
+    left: -20px;
+}
+
+.tech-orbit-2 {
+    width: 260px;
+    height: 260px;
+    top: -40px;
+    left: -40px;
+    animation-duration: 20s;
+    animation-direction: reverse;
+}
+
+.tech-orbit-3 {
+    width: 300px;
+    height: 300px;
+    top: -60px;
+    left: -60px;
+    animation-duration: 25s;
+}
+
+.tech-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    animation: rotateBadge 15s linear infinite reverse;
+}
+
+.tech-orbit-2 .tech-badge {
+    animation-duration: 20s;
+}
+
+.tech-orbit-3 .tech-badge {
+    animation-duration: 25s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateBadge {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(-360deg);
+    }
+}
+
+/* Terminal Prompt */
+.terminal-prompt {
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    margin-right: 8px;
+    animation: blink 1.5s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+    font-weight: 500;
+    transition: all var(--transition-base);
+}
+
+.tech-tag:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Code Brackets in Titles */
+.code-bracket {
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    margin: 0 var(--spacing-sm);
+    opacity: 0.6;
+}
+
+/* About Grid with Code Snippet */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.code-snippet-box {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.code-snippet-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.code-header {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.code-dot-red {
+    background: #ff5f56;
+}
+
+.code-dot-yellow {
+    background: #ffbd2e;
+}
+
+.code-dot-green {
+    background: #27c93f;
+}
+
+.code-file {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.code-snippet-box pre {
+    margin: 0;
+    padding: var(--spacing-lg);
+    background: var(--code-bg);
+    overflow-x: auto;
+}
+
+.code-snippet-box code {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    color: var(--code-text);
+}
+
+.code-keyword {
+    color: #c678dd;
+    font-weight: 600;
+}
+
+.code-string {
+    color: #98c379;
+}
+
+body.dark-mode .code-keyword {
+    color: #bb9af7;
+}
+
+body.dark-mode .code-string {
+    color: #9ece6a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .tech-orbit {
+        display: none;
+    }
+
+    .code-decoration {
+        opacity: 0.02;
+    }
+
+    .tech-tags {
+        gap: var(--spacing-xs);
+    }
+
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}

@@ -1,0 +1,81 @@
+/* ==========================================
+   Minimalist SVG Icons System
+   ========================================== */
+
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-lg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.icon-xl {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.icon-skill {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: var(--spacing-md);
+    stroke: var(--accent-primary);
+    transition: all var(--transition-base);
+}
+
+.skill-card:hover .icon-skill {
+    stroke: var(--accent-hover);
+    transform: translateY(-4px);
+}
+
+.icon-contact {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    stroke: var(--accent-primary);
+}
+
+.icon-project {
+    font-size: 4rem;
+    stroke: var(--accent-primary);
+}
+
+/* Floating animation for icons */
+.icon-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .icon {
+    stroke: currentColor;
+}
+
+/* Icon colors */
+.icon-primary {
+    stroke: var(--accent-primary);
+}
+
+.icon-secondary {
+    stroke: var(--text-secondary);
+}
+
+.icon-success {
+    stroke: #10b981;
+}
+
+.icon-warning {
+    stroke: #f59e0b;
+}
+
+.icon-error {
+    stroke: #ef4444;
+}
